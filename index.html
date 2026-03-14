@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Mall Wayfinding</title>
+    <link rel="stylesheet" href="styles.css?v=a9k3m7">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect x="4" y="4" width="12" height="12" fill="#00b7af" rx="2"/>
+                    <rect x="24" y="4" width="12" height="12" fill="#00b7af" rx="2"/>
+                    <rect x="4" y="24" width="12" height="12" fill="#00b7af" rx="2"/>
+                    <rect x="24" y="24" width="12" height="12" fill="#00b7af" rx="2"/>
+                </svg>
+                <h1>Mall Guide</h1>
+            </div>
+            <button class="home-btn" id="homeBtn">Home</button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Home Screen -->
+        <div class="screen" id="homeScreen" style="display: flex;">
+            <div class="home-content">
+                <h2>Welcome to Westfield Mall</h2>
+                <p class="subtitle">How can we help you today?</p>
+
+                <div class="action-grid">
+                    <button class="action-card" id="searchBtn">
+                        <div class="icon">🔍</div>
+                        <div class="text">Search Stores</div>
+                    </button>
+                    <button class="action-card" id="browseBtn">
+                        <div class="icon">📍</div>
+                        <div class="text">Browse Directory</div>
+                    </button>
+                    <button class="action-card" id="categoriesBtn">
+                        <div class="icon">🏪</div>
+                        <div class="text">By Category</div>
+                    </button>
+                    <button class="action-card" id="mapBtn">
+                        <div class="icon">🗺️</div>
+                        <div class="text">Mall Map</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Screen -->
+        <div class="screen" id="searchScreen">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search for stores...">
+                    <button class="search-clear" id="searchClear">×</button>
+                </div>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+        </div>
+
+        <!-- Directory Screen -->
+        <div class="screen" id="directoryScreen">
+            <div class="directory-container">
+                <div class="floor-tabs">
+                    <button class="floor-tab active" data-floor="1">Level 1</button>
+                    <button class="floor-tab" data-floor="2">Level 2</button>
+                    <button class="floor-tab" data-floor="3">Level 3</button>
+                </div>
+                <div class="stores-grid" id="storesGrid"></div>
+            </div>
+        </div>
+
+        <!-- Categories Screen -->
+        <div class="screen" id="categoriesScreen">
+            <div class="categories-container">
+                <div class="categories-grid" id="categoriesGrid"></div>
+            </div>
+        </div>
+
+        <!-- Map Screen -->
+        <div class="screen" id="mapScreen">
+            <div class="map-container">
+                <div class="floor-selector">
+                    <button class="map-floor-btn active" data-floor="1">Level 1</button>
+                    <button class="map-floor-btn" data-floor="2">Level 2</button>
+                    <button class="map-floor-btn" data-floor="3">Level 3</button>
+                </div>
+                <div class="mall-map" id="mallMap"></div>
+            </div>
+        </div>
+
+        <!-- Store Detail Screen -->
+        <div class="screen" id="detailScreen">
+            <div class="detail-container">
+                <div class="detail-header">
+                    <h2 id="detailName"></h2>
+                    <p id="detailCategory" class="detail-category"></p>
+                </div>
+                <div class="detail-info">
+                    <div class="info-item">
+                        <span class="info-label">Location:</span>
+                        <span id="detailLocation" class="info-value"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Hours:</span>
+                        <span id="detailHours" class="info-value"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Category:</span>
+                        <span id="detailCatFull" class="info-value"></span>
+                    </div>
+                </div>
+                <button class="directions-btn" id="directionsBtn">Get Directions</button>
+            </div>
+        </div>
+
+        <!-- Directions Screen -->
+        <div class="screen" id="directionsScreen">
+            <div class="directions-container">
+                <div class="current-location">
+                    <h3>Current Location</h3>
+                    <select id="startFloor" class="location-select">
+                        <option value="1">Level 1 - Main Entrance</option>
+                        <option value="2">Level 2</option>
+                        <option value="3">Level 3</option>
+                    </select>
+                </div>
+                <div class="direction-path" id="directionPath"></div>
+                <button class="back-directions-btn">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=a9k3m7"></script>
+</body>
+</html>
